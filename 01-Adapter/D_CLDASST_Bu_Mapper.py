@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import platform
 
 current_path = os.getcwd()
 bu_df = pd.read_csv(current_path + '\\ad_dump\\AD_Extract.csv')
@@ -19,4 +20,7 @@ bu_df['USR_SAS_AGE'] = ""
 bu_df['USR_NON_SAS_SKL'] = ""
 bu_df['USR_NON_SAS_AGE'] = ""
 
-bu_df.to_csv('..\\00-Data Model\\D_CLDASST_Bu_Mapper_Output.csv', index=False)
+if platform.system() == 'Windows':
+    if not os.path.isdir("..\\00-Data Model"):
+        os.makedirs("..\\00-Data Model")
+    bu_df.to_csv('..\\00-Data Model\\D_CLDASST_Bu_Mapper_Output.csv', index=False)
