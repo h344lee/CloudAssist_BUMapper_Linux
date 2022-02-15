@@ -23,4 +23,4 @@ bu_df['USR_NON_SAS_AGE'] = ""
 if platform.system() == 'Windows':
     if not os.path.isdir("..\\00-Data Model"):
         os.makedirs("..\\00-Data Model")
-    bu_df.to_csv('..\\00-Data Model\\D_CLDASST_Bu_Mapper_Output.csv', index=False)
+    bu_df.to_csv('..\\00-Data Model\\D_CLDASST_DISC_USR_GRP_REF.csv', index=False)
